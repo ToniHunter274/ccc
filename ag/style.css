@@ -1,0 +1,107 @@
+:root {
+  /* Color */
+  --lightCyan: hsl(193, 38%, 86%);
+  --neonGreen: hsl(150, 100%, 66%);
+  --grayishBlue: hsl(217, 19%, 38%);
+  --darkGrayishBlue: hsl(217, 19%, 24%);
+  --darkBlue: hsl(218, 23%, 16%);
+  --boxShadow: 0 0 1.5rem var(--neonGreen);
+  --subtleShadow: 0 0 .5rem var(--neonGreen);
+  /* Font */
+  --standardFontSize: 1.6rem;
+  --quoteFontSize: 2.8rem;
+  --mainFontFamily: 'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--mainFontFamily);
+}
+
+body {
+  background-color: var(--darkBlue);
+  color: var(--lightCyan);
+  font-size: var(--quoteFontSize);
+  font-weight: 800;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  background-color: var(--darkGrayishBlue);
+  width: min(90vmin, 60rem);
+  padding-block: 2rem;
+  border-radius: 1.5rem;
+}
+
+.numDisplay {
+  color: var(--neonGreen);
+  font-size: var(--standardFontSize);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .4rem;
+  margin-block: 2.1rem;
+}
+
+.quoteCtnr {
+  position: relative;
+  padding: 2rem;
+}
+
+.dice {
+  background-color: var(--neonGreen);
+  border-radius: 50%;
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.dice img {
+  transform: translateY(calc(50% - .25rem));
+}
+
+.spinDice {
+  position: absolute;
+  inset: calc(50% - 2.7rem) calc(50% - 2.6rem);
+  display: none;
+  animation: spin .6s ease-in-out infinite normal;
+}
+
+.getDice {
+  position: absolute;
+  inset: calc(100% - 2.7rem) calc(50% - 2.6rem);
+  cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+  }
+  
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
